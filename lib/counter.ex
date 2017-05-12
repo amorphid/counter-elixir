@@ -31,7 +31,14 @@ defmodule Counter do
   # Callbacks #
   #############
 
-  # TODO: Add &Counter.handle_call/3 for :read_count
+  # TODO:  Add &Counter.handle_call/3 for :increment_by_1
+
+  @doc """
+  Returns the current count.
+  """
+  def handle_call(:read_count, _from, state) do
+    {:reply, state, state}
+  end
 
   def init(_noargs) do
     state = 0
