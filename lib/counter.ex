@@ -54,6 +54,9 @@ defmodule Counter do
     {:ok, state}
   end
 
+  @doc """
+  Logs an error when process is being terminated.
+  """
   def terminate(reason, state) do
     require Logger
 
