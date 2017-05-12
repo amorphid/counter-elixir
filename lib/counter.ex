@@ -31,10 +31,33 @@ defmodule Counter do
   # Callbacks #
   #############
 
+  # TODO: Add &Counter.handle_call/3 for :read_count
+
   def init(_noargs) do
     state = 0
     {:ok, state}
   end
 
-  # TODO:  Add &Counter.terminate/2 callback
+  def terminate(reason, state) do
+    require Logger
+
+    :ok = Logger.error("""
+
+    >> Error:
+
+    Counter #{inspect(self())} being terminated.  This shouldn't happen.
+
+    >> Reason:
+
+    #{inspect(reason)}
+
+    | State:
+
+    #{inspect(state)}
+
+    >> Env:
+
+    #{inspect(__ENV__)}
+    """)
+  end
 end
