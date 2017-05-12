@@ -23,3 +23,7 @@ A quick & dirty example to show how an Elixir process
 
     # generate the docs
     $ mix docs
+
+## Example
+
+    $ mix counter.example
