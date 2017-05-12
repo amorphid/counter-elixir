@@ -1,19 +1,13 @@
 # Counter
 
-**TODO: Add description**
+A quick & dirty example to show how an Elixir process
 
-## Installation
+## Dependencies / System
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `counter` to your list of dependencies in `mix.exs`:
+* Elixir 1.4 or greater
 
-```elixir
-def deps do
-  [{:counter, "~> 0.1.0"}]
-end
-```
+## Getting started
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/counter](https://hexdocs.pm/counter).
-
+    $ git clone git@github.com:amorphid/counter-elixir.git
+    $ cd counter-elixir
+    $ mix test
