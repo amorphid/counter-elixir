@@ -3,7 +3,7 @@ defmodule CounterTest do
   doctest Counter
 
   setup do
-    counter = Counter.start_link()
+    {:ok, counter} = Counter.start_link()
     {:ok, [counter: counter]}
   end
 
