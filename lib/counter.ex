@@ -15,7 +15,7 @@ defmodule Counter do
   end
 
   @doc """
-  Hello world.
+  Hello world.  Let this function in here so one could see how doc tests works.
 
   ## Examples
 
@@ -31,7 +31,13 @@ defmodule Counter do
   # Callbacks #
   #############
 
-  # TODO:  Add &Counter.handle_call/3 for :increment_by_1
+  @doc """
+  Increments the count by 1.
+  """
+  def handle_call(:increment_by_1, _from, state) do
+    new_state = state + 1
+    {:reply, :ok, new_state}
+  end
 
   @doc """
   Returns the current count.
