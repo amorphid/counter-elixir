@@ -46,6 +46,9 @@ defmodule Counter do
     {:reply, state, state}
   end
 
+  @doc """
+  Initializes the Counter process.
+  """
   def init(_noargs) do
     state = 0
     {:ok, state}
