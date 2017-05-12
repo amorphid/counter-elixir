@@ -10,19 +10,19 @@ defmodule Mix.Tasks.Counter.Example do
     {:ok, pid} = Counter.start_link()
     IO.puts("{:ok, pid} = Counter.start_link()")
 
-    0 = GenServer.call(pid, :read_count)
-    IO.puts("0 = GenServer.call(pid, :read_count)")
+    0 = Counter.read_count(pid)
+    IO.puts("0 = Counter.read_count(pid)")
 
-    :ok = GenServer.call(pid, :increment_by_1)
-    IO.puts(":ok = GenServer.call(pid, :increment_by_1)")
+    :ok = Counter.increment_by_1(pid)
+    IO.puts(":ok = Counter.increment_by_1(pid)")
 
-    :ok = GenServer.call(pid, :increment_by_1)
-    IO.puts(":ok = GenServer.call(pid, :increment_by_1)")
+    :ok = Counter.increment_by_1(pid)
+    IO.puts(":ok = Counter.increment_by_1(pid)")
 
-    :ok = GenServer.call(pid, :increment_by_1)
-    IO.puts(":ok = GenServer.call(pid, :increment_by_1)")
+    :ok = Counter.increment_by_1(pid)
+    IO.puts(":ok = Counter.increment_by_1(pid)")
 
-    3 = GenServer.call(pid, :read_count)
-    IO.puts("3 = GenServer.call(pid, :read_count)")
+    3 = Counter.read_count(pid)
+    IO.puts("3 = Counter.read_count(pid)")
   end
 end

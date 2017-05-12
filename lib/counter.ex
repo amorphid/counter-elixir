@@ -8,6 +8,20 @@ defmodule Counter do
   #######
 
   @doc """
+  Increments the count by 1.
+  """
+  def increment_by_1(pid) do
+    GenServer.call(pid, :increment_by_1)
+  end
+
+  @doc """
+  Returns the current count.
+  """
+  def read_count(pid) do
+    GenServer.call(pid, :read_count)
+  end
+
+  @doc """
   Creates an anonymous GenServer process (aka an unnamed pid).  Starts w/
   """
   def start_link() do
@@ -31,17 +45,13 @@ defmodule Counter do
   # Callbacks #
   #############
 
-  @doc """
-  Increments the count by 1.
-  """
+  @doc false
   def handle_call(:increment_by_1, _from, state) do
     new_state = state + 1
     {:reply, :ok, new_state}
   end
 
-  @doc """
-  Returns the current count.
-  """
+  @doc false
   def handle_call(:read_count, _from, state) do
     {:reply, state, state}
   end

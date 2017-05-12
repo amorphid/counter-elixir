@@ -9,9 +9,9 @@ defmodule CounterTest do
 
   test "incrementing the count by 1", c do
     counter = c[:counter]
-    base_count = GenServer.call(counter, :read_count)
-    :ok = GenServer.call(counter, :increment_by_1)
-    new_count = GenServer.call(counter, :read_count)
+    base_count = Counter.read_count(counter)
+    :ok = Counter.increment_by_1(counter)
+    new_count = Counter.read_count(counter)
     assert new_count == base_count + 1
   end
 end
